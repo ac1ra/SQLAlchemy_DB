@@ -38,10 +38,10 @@ def info(id):
     return render_template('info.html', subgenres=subgenres)
 
 
-@app.route('/book/')
-def info(id):
-    subgenres = Subgenre.query.filter_by(genre_id=id)
-    return render_template('book.html', subgenres=subgenres)
+# @app.route('/book/')
+# def info(id):
+#     subgenres = Subgenre.query.filter_by(genre_id=id)
+#     return render_template('book.html', subgenres=subgenres)
 
 
 if __name__ == "__main__":
