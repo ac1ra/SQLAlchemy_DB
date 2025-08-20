@@ -87,6 +87,18 @@ def book(genre_name):
     return render_template('book.html', books=books)
 
 
+@app.route('/common/')
+def common():
+    genres = Genre.query.all()
+    return render_template('common.html', genres=genres)
+
+
+@app.route('/common/<int:id>')
+def common_subgenre(id):
+    subgenres = Subgenre.query.filter_by(genre_id=id)
+    return render_template('common.html', subgenres=subgenres)
+
+
 if __name__ == "__main__":
     insert_data(json_file)
     app.run(debug=True)

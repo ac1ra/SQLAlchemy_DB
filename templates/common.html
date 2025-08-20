@@ -1,0 +1,26 @@
+{%extends 'base.html'%}
+{%block title%}
+<h1>Genre Page</h1>
+{%endblock%}
+{%block content%}
+{%for row in genres%}
+<div style="display: flex; flex-direction: row;">
+
+    <a href="{{url_for('common_subgenre',id=row.genre_id)}}"><button type="button" class="btn btn-light"
+            style="width: 100%;">{{row.genre_id}}.
+            {{row.name_genre}}
+        </button>
+    </a>
+</div>
+{%endfor%}
+
+{%endblock%}
+
+{%block content_1%}
+<h1>Test</h1>
+{%for row in subgenres%}
+<div>
+    {{row.genre_id}}. {{row.name_subgenre}}
+</div>
+{%endfor%}
+{%endblock%}
